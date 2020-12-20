@@ -222,8 +222,13 @@
 		<h1>Welcome to CodeIgniter <?= CodeIgniter\CodeIgniter::CI_VERSION ?></h1>
 
 		<h2>The small framework with powerful features</h2>
+        <p> <a href="<?=base_url('home/createUserManagement') ?>"> Create Users Management </a> </p>
+        <p> <a href="<?=base_url('home/dropUserManagement') ?>"> Drop Users Management </a> </p>
+        <p> <a href="<?=base_url('home/addGroups') ?>"> Add default Groups </a> </p>
+        <p> <a href="<?=base_url('home/addUser') ?>"> Add Admin User </a> </p>
 
-	</div>
+
+    </div>
 
 </header>
 

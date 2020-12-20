@@ -1,5 +1,9 @@
 # CodeIgniter 4 Application Starter
 
+
+## User Management
+[go to this page](userManagement.md)
+
 ## What is CodeIgniter?
 
 CodeIgniter is a PHP full-stack web framework that is light, fast, flexible, and secure. 
