@@ -2,7 +2,7 @@
 
 
 ## User Management
-[go to this page](userManagement.md)
+For user management info [go to this page](userManagement.md)
 
 ## What is CodeIgniter?
 

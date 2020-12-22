@@ -225,7 +225,9 @@
         <p> <a href="<?=base_url('home/createUserManagement') ?>"> Create Users Management </a> </p>
         <p> <a href="<?=base_url('home/dropUserManagement') ?>"> Drop Users Management </a> </p>
         <p> <a href="<?=base_url('home/addGroups') ?>"> Add default Groups </a> </p>
-        <p> <a href="<?=base_url('home/addUser') ?>"> Add Admin User </a> </p>
+        <p> <a href="<?=base_url('home/addAdmin') ?>"> Add Admin User </a> </p>
+        <p> <a href="<?=base_url('home/login') ?>"> Login Admin User </a> </p>
+        <p> <a href="<?=base_url('home/logout') ?>"> Logout Admin User </a> </p>
 
 
     </div>

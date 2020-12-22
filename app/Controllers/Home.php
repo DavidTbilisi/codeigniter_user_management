@@ -3,9 +3,11 @@
 class Home extends BaseController
 {
     protected $db;
+    protected $sess;
     public function __construct()
     {
         $this->db = \Config\Database::connect();
+        $this->sess = \Config\Services::session();
     }
 
     public function index()
@@ -136,7 +138,7 @@ class Home extends BaseController
     }
 
 
-    public function addUser() {
+    public function addAdmin() {
 
         $data = [
             'name' => "Administrator",
@@ -149,5 +151,46 @@ class Home extends BaseController
 
     }
 
+    public function login()
+    {
+        $builder = $this->db->table('ic_users');
+        $builder->where("email",'admin@example.ge');
+        $admin = $builder->get()->getRow();
+
+        $request = service('request');
+        //TODO: login with post
+        $pass = $request->getPost('pass');
+        $email = $request->getPost('email');
+
+
+        $pass = 'default';
+        $email = 'admin@example.ge';
+
+
+        if (hash('sha256', $pass) == $admin->pass && $admin->email == $email) {
+            $this->sess->set("user", $admin->name);
+            $this->sess->set("email", $admin->email);
+            $this->sess->set("group_id", $admin->group_id);
+            $this->sess->set("logedin", 1);
+            print("User '{$this->sess->get('user')}' logged in");
+        } else {
+            var_dump(hash('sha256', $pass) == $admin->pass && $admin->email == $email);
+        }
+
+
+    }
+
+    public function logout() {
+        $this->sess->destroy();
+        return redirect()->to(env("app.baseURL"));
+    }
+
+    public function addUser()
+    {
+        $request = service('request');
+        //TODO: login with post
+        $pass = $request->getPost('pass');
+        $email = $request->getPost('email');
+    }
 
 }
